@@ -1,0 +1,32 @@
+.collapse-container {
+  position: relative;
+  margin-bottom: 1.5em;
+}
+
+.question {
+  height: 50px;
+  width: 100%;
+  background: #ff6060;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+}
+
+/* Ce container est au même niveau que .question. Il sert à faire disparaitre le content sans que l'aperçoit passé derrière .question. */
+.answer-container {
+  width: 100%;
+  border-radius: 0 0 5px 5px;
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.answer-container div {
+  background: #f7f7f7;
+  padding: 25px 15px 15px 15px;
+  color: #ff6060;
+}

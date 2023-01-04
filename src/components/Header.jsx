@@ -1,13 +1,13 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '../assets/logo_kasa.svg'
-import { useState } from 'react'
 
 const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 2em;
+  margin-bottom: 2em;
 `
 
 const Logo = styled.img`
@@ -17,6 +17,7 @@ const Logo = styled.img`
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: #ff6060;
+  transition: all ease 0.4s;
   &:visited {
     color: none;
   }
@@ -31,16 +32,17 @@ const StyledLink = styled(Link)`
 const StyledLinkHome = styled(StyledLink)`
   margin-right: 60px;
   border-bottom: ${(props) =>
-    props.$currentPage === '/' && 'solid #ff6060 3px;'};
+    props.$currentPage === '/' ? 'solid #ff6060 3px;' : 'none'};
 `
 
 const StyledLinkAbout = styled(StyledLink)`
   border-bottom: ${(props) =>
-    props.$currentPage === '/about' && 'solid #ff6060 3px;'};
+    props.$currentPage === '/about' ? 'solid #ff6060 3px;' : 'none'};
 `
 
 function Header() {
-  const [currentPage, setCurrentPage] = useState('/')
+  const location = useLocation()
+  const path = location.pathname
 
   return (
     <HeaderWrapper>
@@ -48,18 +50,10 @@ function Header() {
         <Logo src={logo} alt="Logo de Kasa" />
       </Link>
       <nav>
-        <StyledLinkHome
-          to="/"
-          onClick={(e) => setCurrentPage(`${e.target.pathname}`)}
-          $currentPage={currentPage}
-        >
+        <StyledLinkHome to="/" $currentPage={path}>
           Accueil
         </StyledLinkHome>
-        <StyledLinkAbout
-          to="/about"
-          onClick={(e) => setCurrentPage(`${e.target.pathname}`)}
-          $currentPage={currentPage}
-        >
+        <StyledLinkAbout to="/about" $currentPage={path}>
           A propos
         </StyledLinkAbout>
       </nav>

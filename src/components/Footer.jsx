@@ -9,11 +9,12 @@ const StyledFooter = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2em;
 `
 
 const Logo = styled.img`
   height: 35px;
-  margin: 20px 0;
+  margin: 0 0 30px 0;
 `
 
 function Footer() {

@@ -1,0 +1,91 @@
+.accomodationContainer {
+  width: 100%;
+}
+
+/* ⬇ This is all the informations below the slider. */
+.infoContainer {
+  width: 100%;
+}
+
+/* ⬇ Contains the title, location, tags, landlord and rating. */
+.infoContainer-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.infoContainer-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoContainer-header-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 65%;
+}
+.infoContainer-header-left h1 {
+  color: #ff6060;
+  font-weight: 500;
+  font-size: 2.4rem;
+  margin-bottom: 0.3rem;
+  cursor: default;
+}
+.infoContainer-header-left p {
+  color: #ff6060;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  cursor: default;
+}
+.infoContainer-header-left-tags {
+  display: flex;
+}
+
+.infoContainer-header-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 22%;
+}
+
+.infoContainer-header-right-landlord {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.infoContainer-header-right-landlord-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: gray;
+}
+.infoContainer-header-right-landlord img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.infoContainer-header-right-landlord p {
+  color: #ff6060;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-right: 15px;
+  line-height: 25px;
+  text-align: end;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+.infoContainer-header-right-landlord p:hover {
+  text-decoration: underline;
+}
+.infoContainer-header-right-landlord p:active {
+  color: #fa9999;
+}
