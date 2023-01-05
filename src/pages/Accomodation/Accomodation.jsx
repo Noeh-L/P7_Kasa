@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom'
 import datas from '../../datas/datas.json'
-import Slideshow from '../../components/Slideshow'
+import Slideshow from '../../components/Slideshow/Slideshow'
 import './Accomodation.css'
 import Collapse from '../../components/Collapse/Collapse'
 import Tag from '../../components/Tag'
-import Rating from '../../components/Rating'
-import Error from '../Error'
+import Rating from '../../components/Rating/Rating'
+import Error from '../Error/Error'
 
 function Accomodation() {
   const { idInURL } = useParams()
@@ -16,7 +16,6 @@ function Accomodation() {
     everyIds.push(accomodation.id)
   })
   const doIdExist = everyIds.find((id) => id === idInURL) ? true : false
-  console.log(everyIds, idInURL, doIdExist)
 
   if (doIdExist) {
     return (
@@ -54,12 +53,10 @@ function Accomodation() {
           </div>
           <div className="infoContainer-description">
             <Collapse
-              widthSetted={'47%'}
               question={'Description'}
               answer={currentAccom.description}
             />
             <Collapse
-              widthSetted={'47%'}
               question={'Équipements'}
               answer={currentAccom.equipments.map((equipment, index) => (
                 <p key={`${equipment}-${index}`}>{equipment}</p>

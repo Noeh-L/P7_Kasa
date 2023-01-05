@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import './Error.css'
 
 const ErrorWrapper = styled.div`
   display: flex;
@@ -9,23 +10,25 @@ const ErrorWrapper = styled.div`
   margin-bottom: 5em;
 `
 
-const Title = styled.div`
+const Title = styled.h1`
   color: #ff6060;
   font-size: 16rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
 `
 
-const Paragraphe = styled.div`
+const Paragraphe = styled.p`
   color: #ff6060;
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 7rem;
+  text-align: center;
 `
 
 const RedirectLink = styled(Link)`
   color: #ff6060;
   font-size: 1.2rem;
+  text-align: center;
   &:hover {
     color: #ffb0b0;
   }
@@ -36,7 +39,7 @@ const RedirectLink = styled(Link)`
 
 function Error() {
   return (
-    <ErrorWrapper>
+    <ErrorWrapper className="errorContainer">
       <Title>404</Title>
       <Paragraphe>Oups! La page que vous demandez n'existe pas.</Paragraphe>
       <RedirectLink to="/">Revenir sur la page d'accueil</RedirectLink>

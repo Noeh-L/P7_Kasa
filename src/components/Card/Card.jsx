@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import './Card.css'
 
 const StyledCard = styled(Link)`
-  height: 340px;
-  aspect-ratio: 1;
-  border-radius: 10px;
+  width: 100%;
   overflow: hidden;
   background: #ff6060;
   position: relative;
@@ -54,7 +53,7 @@ function Card({ id, title, cover }) {
   let [opacityCard, setOpacityCard] = useState(0.5)
 
   return (
-    <StyledCard to={`/accomodation/${id}`}>
+    <StyledCard to={`/accomodation/${id}`} className="cardContainer">
       <InvisibleLayer
         onMouseOver={() => {
           setScaleCard(scaleCard + 0.1)

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Link, useLocation } from 'react-router-dom'
-import logo from '../assets/logo_kasa.svg'
+import logo from '../../assets/logo_kasa.svg'
+import './Header.css'
 
 const HeaderWrapper = styled.header`
   display: flex;
@@ -11,7 +12,13 @@ const HeaderWrapper = styled.header`
 `
 
 const Logo = styled.img`
-  height: 65px;
+  width: 200px;
+`
+
+const Navbar = styled.nav`
+  width: 210px;
+  display: flex;
+  justify-content: space-between;
 `
 
 const StyledLink = styled(Link)`
@@ -30,7 +37,7 @@ const StyledLink = styled(Link)`
 `
 
 const StyledLinkHome = styled(StyledLink)`
-  margin-right: 60px;
+  margin-right: 15px;
   border-bottom: ${(props) =>
     props.$currentPage === '/' ? 'solid #ff6060 3px;' : 'none'};
 `
@@ -45,18 +52,18 @@ function Header() {
   const path = location.pathname
 
   return (
-    <HeaderWrapper>
-      <Link to="/">
+    <HeaderWrapper className="headerWrapper">
+      <Link to="/" className="logo">
         <Logo src={logo} alt="Logo de Kasa" />
       </Link>
-      <nav>
+      <Navbar className="navbar">
         <StyledLinkHome to="/" $currentPage={path}>
           Accueil
         </StyledLinkHome>
         <StyledLinkAbout to="/about" $currentPage={path}>
-          A propos
+          À propos
         </StyledLinkAbout>
-      </nav>
+      </Navbar>
     </HeaderWrapper>
   )
 }

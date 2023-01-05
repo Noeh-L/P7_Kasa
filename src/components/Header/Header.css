@@ -1,0 +1,29 @@
+@media screen and (max-width: 1240px) {
+  .headerWrapper {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .headerWrapper {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .headerWrapper {
+    padding: 0 20px;
+    align-items: end;
+  }
+
+  .logo img {
+    width: 110px;
+  }
+
+  .headerWrapper nav {
+    justify-content: end;
+    min-width: 50%;
+    flex-wrap: wrap;
+    font-size: 0.8em;
+  }
+}

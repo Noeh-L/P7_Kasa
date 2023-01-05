@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { MdStarRate } from 'react-icons/md'
+import './Rating.css'
 
 const StarContainer = styled.div`
   display: flex;
@@ -8,25 +9,25 @@ const StarContainer = styled.div`
 
 const RedStar = styled(MdStarRate)`
   color: #ff6060;
-  font-size: 2rem;
   margin: 1px;
 `
 const GrayStar = styled(MdStarRate)`
   color: #e3e3e3;
-  font-size: 2rem;
   margin: 1px;
 `
 
 function Rating({ rate }) {
   let numberOfRedStars = []
-  let numberOfGrayStars = new Array(5 - rate).fill(<GrayStar />)
+  let numberOfGrayStars = new Array(5 - rate).fill(
+    <GrayStar className="star" />
+  )
 
   for (let i = 1; i <= rate; i++) {
-    numberOfRedStars.push(<RedStar />)
+    numberOfRedStars.push(<RedStar className="star" />)
   }
 
   return (
-    <StarContainer>
+    <StarContainer className="ratingContainer">
       {numberOfRedStars.map((star, index) => (
         <div key={`redStar-${index}`}>{star}</div>
       ))}

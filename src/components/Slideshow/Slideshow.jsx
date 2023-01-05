@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import left_arrow from '../assets/left_arrow.svg'
-import right_arrow from '../assets/right_arrow.svg'
+import left_arrow from '../../assets/left_arrow.svg'
+import right_arrow from '../../assets/right_arrow.svg'
+import './Slideshow.css'
 
 const SlideshowContainer = styled.div`
-  height: 415px;
   border-radius: 25px;
   overflow: hidden;
   position: relative;
@@ -37,10 +37,7 @@ const ArrowsWrapper = styled.div`
 `
 const Arrows = styled.img`
   cursor: pointer;
-  height: 90px;
-  width: 90px;
   padding: 10px;
-  border-radius: 50%;
   &::before {
     content: '';
     background: blue;
@@ -71,7 +68,7 @@ function Slideshow({ pictures, altText }) {
   const [indexPhoto, setIndexPhoto] = useState(0)
 
   return (
-    <SlideshowContainer>
+    <SlideshowContainer className="sliderContainer">
       <ImageWrapper>
         <Image
           src={pictures[indexPhoto]}
@@ -83,6 +80,7 @@ function Slideshow({ pictures, altText }) {
         <Control>
           <ArrowsWrapper>
             <Arrows
+              className="arrow"
               src={left_arrow}
               alt="Flèche gauche"
               onClick={() =>
@@ -92,6 +90,7 @@ function Slideshow({ pictures, altText }) {
               }
             />
             <Arrows
+              className="arrow"
               src={right_arrow}
               alt="Flèche droite"
               onClick={() =>
@@ -101,7 +100,7 @@ function Slideshow({ pictures, altText }) {
               }
             />
           </ArrowsWrapper>
-          <Page>
+          <Page className="pageNumber">
             {indexPhoto + 1}/{numberOfPictures}
           </Page>
         </Control>

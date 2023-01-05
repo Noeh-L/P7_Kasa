@@ -1,0 +1,29 @@
+.sliderContainer {
+  height: 415px;
+}
+
+.sliderContainer img {
+  height: 100%;
+}
+
+.arrow {
+  width: 90px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .sliderContainer {
+    height: 255px;
+  }
+
+  .pageNumber {
+    display: none;
+  }
+
+  .arrow {
+    height: 50px;
+    width: 50px;
+    aspect-ratio: 1;
+  }
+}

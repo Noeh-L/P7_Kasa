@@ -1,0 +1,24 @@
+@media screen and (max-width: 992px) {
+  .errorContainer {
+    width: 100%;
+    padding: 0 50px;
+  }
+
+  .errorContainer h1 {
+    font-size: 12rem;
+  }
+
+  .errorContainer p {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .errorContainer h1 {
+    font-size: 8rem;
+  }
+
+  .errorContainer p {
+    font-size: 1.4rem;
+  }
+}

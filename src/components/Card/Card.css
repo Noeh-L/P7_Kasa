@@ -1,0 +1,16 @@
+.cardContainer {
+  height: 340px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .cardContainer {
+    border-radius: 15px;
+    height: 255px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cardContainer {
+    border-radius: 15px;
+  }
+}

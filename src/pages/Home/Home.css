@@ -1,0 +1,49 @@
+.homeWrapper {
+  width: 100%;
+  margin: auto;
+}
+
+.homeWrapper-banner {
+  height: 223px;
+  margin-bottom: 2em;
+}
+
+.cardDeck {
+  margin-bottom: 3em;
+  padding: 2em;
+  border-radius: 25px;
+  background: #f7f7f7;
+  width: 100%;
+
+  display: inline-grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+
+@media screen and (max-width: 1240px) {
+  .homeWrapper {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .cardDeck {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .homeWrapper-banner {
+    height: 110px;
+    overflow: hidden;
+    margin-bottom: 2em;
+    border-radius: 15px;
+  }
+
+  .cardDeck {
+    background-color: white;
+    padding: 0;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
